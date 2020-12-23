@@ -1,0 +1,84 @@
+api-version: 1.16
+author: SnootierMoon
+database: true
+description: Snoot's epic plugin version 2
+main: snoot.v2.SnootMain
+name: SnootPlugin-v2
+version: 2.0.0
+
+commands:
+  chair:
+    aliases: chairs
+    permission: snoot.chair
+  chatcolor:
+    aliases: [chatcolour, chatcolors, chatcolours]
+    permission: snoot.chat.color
+  color:
+    aliases: [colour, colors, colours]
+    permission: snoot.color
+  near:
+    permission: snoot.near
+  nick:
+    permission: snoot.chat.nick
+  nightvision:
+    aliases: nv
+    permission: snoot.creative.nightvision
+  speed:
+    permission: snoot.creative.speed
+  tag:
+    permission: snoot.chat.tag
+
+permissions:
+  snoot:
+    default: true
+    children:
+      snoot.chair: true
+      snoot.chat: true
+      snoot.color: true
+      snoot.creative: true
+      snoot.near: true
+      snoot.survival: true
+
+  snoot.chair:
+    default: true
+    description: allows you to use /chair
+
+  snoot.chat:
+    default: true
+    children:
+      snoot.chat.color: true
+      snoot.chat.nick: true
+      snoot.chat.tag: true
+  snoot.chat.color:
+    default: true
+    description: allows you to use /chatcolor
+  snoot.chat.nick:
+    default: true
+    description: allows you to use /nick
+  snoot.chat.tag:
+    default: true
+    children:
+      snoot.chat.tag.modify: true
+      snoot.chat.tag.use: true
+  snoot.chat.tag.modify:
+    default: true
+    description: allows you to change tags with /tag
+  snoot.chat.tag.use:
+    default: true
+    description: allows you to equip tags with /tag
+
+  snoot.creative:
+    default: true
+    children:
+      snoot.creative.nightvision: true
+      snoot.creative.speed: true
+  snoot.creative.nightvision:
+    default: true
+    description: allows you to set night vision with /nightvision
+  snoot.creative.speed:
+    default: true
+    description: allows you to set your speed with /speed
+
+  snoot.near:
+    default: true
+    description: allows you to use /near
